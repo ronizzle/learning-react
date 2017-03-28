@@ -16,7 +16,6 @@
         console.log(a)
     }
 
-    logA()
 
     function logB() {
         var b = 100
@@ -24,7 +23,33 @@
     }
 
     console.log(a)
+    logA()
     logB()
+
+    var c = undefined
+    if(true) {
+        var c = 100
+        console.log(c)
+    }
+
+    console.log(c)
+
+
+
+
+    if(true) {
+        //let is block scope
+        let d = 100
+        console.log(d)
+        if(true){
+            console.log(d)
+        }
+    }
+
+    //this is undefined
+    console.log(d)
+
+
 </script>
 </body>
 </html>
