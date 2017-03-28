@@ -12,6 +12,12 @@
 <script type="text/babel">
     var SecondComponent = React.createClass({
 
+        getDefaultProps: function() {
+          return {
+              name: "Peter"
+          }
+        },
+
         propTypes: {
             name: React.PropTypes.string,
             address: React.PropTypes.string.isRequired
@@ -32,7 +38,7 @@
 
 
     ReactDOM.render(
-            <SecondComponent name='Morty' address='Samar' />,
+            <SecondComponent address='Samar' />,
             document.getElementById('app')
     );
 </script>
