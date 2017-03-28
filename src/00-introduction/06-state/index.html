@@ -32,7 +32,7 @@
         render: function() {
             return (
             <div>
-                <input type='text' onChange={this.handleNameChanged} />
+                <input type='text' value={this.state.name} onChange={this.handleNameChanged} />
                 <p>Hello, I am {this.state.name}!</p>
                 <button onClick={this.resetName}>Reset name</button>
             </div>
