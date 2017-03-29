@@ -38,8 +38,8 @@
             return (
                 <div className="container">
                     <h1>Count: {this.state.count}</h1>
-                    <Button value={this.props.valueOne} text={this.props.text + ' ' + this.props.valueOne} clickHandler={this.applyIncrement.bind(this, this.props.valueOne)} style="btn blue-btn" />
-                    <Button value={this.props.valueFive} text={this.props.text + ' ' + this.props.valueFive} clickHandler={this.applyIncrement.bind(this, this.props.valueFive)} style="btn green-btn" />
+                    <Button value={this.props.valueOne} text={`this.props.text + ' ' + this.props.valueOne`} clickHandler={this.applyIncrement.bind(this, this.props.valueOne)} style="btn blue-btn" />
+                    <Button value={this.props.valueFive} text={`${this.props.text} ${this.props.valueFive}`} clickHandler={this.applyIncrement.bind(this, this.props.valueFive)} style="btn green-btn" />
                     <Button value={this.props.valueTen} text={this.props.text + ' ' + this.props.valueTen} clickHandler={this.applyIncrement.bind(this, this.props.valueTen)} style="btn purple-btn" />
                 </div>
             )
