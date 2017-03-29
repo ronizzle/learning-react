@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.2/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+    var LifecycleComponent = React.createClass({
+
+        /**
+         * 1 called ONCE
+         * BEFORE COMPONENT IS RENDERED
+         * @returns {{count: number}}
+         */
+        getDefaultProps: function() {
+            console.log("SET UP PROPS")
+        },
+
+        /**
+         * 2 called ONCE
+          * @returns {{count: number}}
+         */
+        getInitialState: function() {
+            console.log("SET UP STATE")
+
+            return {
+                count: 0
+            }
+        },
+
+        /**
+         * 3 called ONCE
+         * BEFORE COMPONENT IS RENDERED
+         * YOU CAN ACCESS/MODIFY PROPS AND STATES HERE
+         * @returns {{count: number}}
+         */
+        componentWillMount: function()  {
+            console.log("COMPONENT IS MOUNTING")
+        },
+
+        /**
+         * RENDER
+         */
+        render: function() {
+            console.log("COMPONENT IS RENDERED")
+            return (
+                    <button onClick={this.increment}>{this.state.count}</button>
+            )
+        },
+
+
+        /**
+         * 3 called ONCE
+         * BEFORE RIGHT AFTER COMPONENT HAS RENDERED
+         * YOU CAN ACCESS/MODIFY PROPS,STATES AND DOM HERE
+         * console.log(ReactDOM.findDOMNode(this))
+         * @returns {{count: number}}
+         */
+        componentDidMount: function() {
+            console.log("COMPONENT HAS RENDERED")
+        },
+
+        increment: function() {
+            this.setState({
+                count: this.state.count + 1
+            })
+        }
+
+    })
+
+    ReactDOM.render(
+            <LifecycleComponent />,
+            document.getElementById('app')
+    )
+</script>
+</body>
+</html>
