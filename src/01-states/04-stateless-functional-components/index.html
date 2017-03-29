@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Class</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.2/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+    var TaskList = React.createClass({
+
+        getInitialState: function() {
+
+            return {
+                tasks: [
+                    {
+                        id: 1,
+                        title: 'Eat'
+                    },
+
+                    {
+                        id: 2,
+                        title: 'Sleep'
+                    },
+
+                    {
+                        id: 3,
+                        title: 'Rave'
+                    },
+
+                    {
+                        id: 4,
+                        title: 'Repeat'
+                    }
+                ]
+            }
+        },
+        render: function() {
+            return (
+                    <ul>
+                    {this.state.tasks.map(function(task){
+                          return <Task title={task.title}/>
+                    })}
+                    </ul>
+            )
+        }
+    })
+
+    var Task = function(props) {
+        return (
+                <li>Task: {props.title}</li>
+        )
+    }
+
+    ReactDOM.render(
+            <TaskList />,
+            document.getElementById('app')
+    )
+</script>
+</body>
+</html>
