@@ -22,7 +22,8 @@
             return {
                 valueOne: 1,
                 valueFive: 5,
-                valueTen: 10
+                valueTen: 10,
+                text: 'Plus  '
             }
         },
         applyIncrement: function(amount) {
@@ -31,13 +32,15 @@
             })
         },
 
+
+
         render: function() {
             return (
                 <div className="container">
                     <h1>Count: {this.state.count}</h1>
-                    <Button value={this.props.valueOne} clickHandler={this.applyIncrement.bind(this, this.props.valueOne)} style="btn blue-btn" />
-                    <Button value={this.props.valueFive} clickHandler={this.applyIncrement.bind(this, this.props.valueFive)} style="btn green-btn" />
-                    <Button value={this.props.valueTen} clickHandler={this.applyIncrement.bind(this, this.props.valueTen)} style="btn purple-btn" />
+                    <Button value={this.props.valueOne} text={this.props.text + ' ' + this.props.valueOne} clickHandler={this.applyIncrement.bind(this, this.props.valueOne)} style="btn blue-btn" />
+                    <Button value={this.props.valueFive} text={this.props.text + ' ' + this.props.valueFive} clickHandler={this.applyIncrement.bind(this, this.props.valueFive)} style="btn green-btn" />
+                    <Button value={this.props.valueTen} text={this.props.text + ' ' + this.props.valueTen} clickHandler={this.applyIncrement.bind(this, this.props.valueTen)} style="btn purple-btn" />
                 </div>
             )
         }
@@ -45,7 +48,7 @@
 
     var Button = function(props) {
         return (
-                <button className={props.style} value={props.value} onClick={props.clickHandler}>Add {props.value}</button>
+                <button className={props.style} value={props.value} onClick={props.clickHandler}>{props.text}</button>
         )
     }
 
