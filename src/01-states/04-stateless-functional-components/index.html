@@ -42,7 +42,7 @@
             return (
                     <ul>
                     {this.state.tasks.map(function(task){
-                          return <Task title={task.title}/>
+                          return <Task title={task.title} key={task.id} />
                     })}
                     </ul>
             )
