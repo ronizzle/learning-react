@@ -19,14 +19,14 @@
             this.click = this.click.bind(this)
         }
 
-        click() {
-            console.log(this)
+        click(some_value) {
+            console.log(some_value)
         }
 
         render() {
             console.log(this.state)
             return (
-                    <div onClick={this.click}>{this.props.default_text}</div>
+                    <div onClick={() => this.click(10)}>{this.props.default_text}</div>
             )
         }
     }
