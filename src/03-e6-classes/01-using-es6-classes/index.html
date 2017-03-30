@@ -16,6 +16,7 @@
             super(props)
             console.log(this.props)
             this.state = {count:0}
+            this.click = this.click.bind(this)
         }
 
         click() {
@@ -25,7 +26,7 @@
         render() {
             console.log(this.state)
             return (
-                    <div onClick={this.click.bind(this)}>{this.props.default_text}</div>
+                    <div onClick={this.click}>{this.props.default_text}</div>
             )
         }
     }
