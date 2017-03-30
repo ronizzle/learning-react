@@ -24,6 +24,10 @@
         default_text: "ES6 via default props"
     }
 
+    Counter.propTypes = {
+        default_text: React.PropTypes.string
+    }
+
     ReactDOM.render(
         <Counter/>,
         document.getElementById('app')
