@@ -17,7 +17,8 @@
         constructor(props) {
             super(props)
             this.state = {
-                count: 0
+                count: 0,
+                hello: "World!"
             }
             this.incrementCount = this.incrementCount.bind(this)
         }
@@ -33,7 +34,7 @@
 
             return (
                 <div className="container">
-                    <BasicComponent count={this.state.count} increment={this.incrementCount} />
+                    <BasicComponent {...this.state} increment={this.incrementCount} />
                 </div>
             )
         }
