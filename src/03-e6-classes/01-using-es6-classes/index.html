@@ -14,13 +14,18 @@
     class Counter extends React.Component {
         render() {
             return (
-                    <div>{this.props.text}</div>
+                    <div>{this.props.default_text}</div>
             )
         }
     }
 
+
+    Counter.defaultProps = {
+        default_text: "ES6 via default props"
+    }
+
     ReactDOM.render(
-        <Counter text="Built with ES6 classes (this was passed via props"/>,
+        <Counter/>,
         document.getElementById('app')
     )
 </script>
