@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Class</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.2/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+    class Counter extends React.Component {
+        constructor(props) {
+            super(props)
+            this.state = {count:0}
+            this.click = this.click.bind(this)
+        }
+
+        click(value) {
+            console.log(value)
+        }
+
+
+
+        render() {
+            return (
+                <div className="container">
+                    <Button className="btn blue-btn" clickHandler={() => this.click(10)} button_label="Click me!" />
+                </div>
+            )
+        }
+    }
+
+
+    const Button = (props) => {
+        return (
+                <button className={props.className} onClick={props.clickHandler}>{props.button_label}</button>
+        )
+    }
+
+    ReactDOM.render(
+        <Counter/>,
+        document.getElementById('app')
+    )
+</script>
+</body>
+</html>
