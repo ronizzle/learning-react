@@ -51,14 +51,26 @@
 
     const Label = (props) => {
         return (
-                <label className="btn blue-btn" onMouseMove={props.increment}>Count: {props.count}</label>
+                <label onMouseMove={props.increment}>Count: {props.count}</label>
         )
     }
 
 
-    let ExtendedButton = BaseCount(Label)
+    let ExtendedButton = BaseCount(Button)
+    let ExtendedLabel = BaseCount(Label)
 
-    ReactDOM.render(<ExtendedButton />, document.getElementById('app'));
+    class Container  extends React.Component {
+        render() {
+            return (
+                    <div>
+                        <ExtendedButton/>
+                        <ExtendedLabel/>
+                    </div>
+            )
+        }
+    }
+
+    ReactDOM.render(<Container />, document.getElementById('app'));
 </script>
 </body>
 </html>
