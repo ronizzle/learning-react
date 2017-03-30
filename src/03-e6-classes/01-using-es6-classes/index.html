@@ -12,7 +12,14 @@
 <div id="app"></div>
 <script type="text/babel">
     class Counter extends React.Component {
+        constructor() {
+            super()
+            this.state = {count:0}
+
+        }
+
         render() {
+            console.log(this.state)
             return (
                     <div>{this.props.default_text}</div>
             )
