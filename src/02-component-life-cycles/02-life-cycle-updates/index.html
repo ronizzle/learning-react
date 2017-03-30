@@ -55,6 +55,13 @@
             console.log(next_state)
             return next_props.likes % 2 === 0;
 
+        },
+
+        componentDidUpdate: function(prev_props, prev_state) {
+
+            console.log("PREVIOUS PROPS", prev_props)
+            console.log("PREVIOUS STATE", prev_state)
+            console.log(ReactDOM.findDOMNode(this))
         }
     })
 
