@@ -47,7 +47,16 @@
         )
     }
 
-    let ExtendedButton = BaseCount(Button)
+
+
+    const Label = (props) => {
+        return (
+                <label className="btn blue-btn" onMouseMove={props.increment}>Count: {props.count}</label>
+        )
+    }
+
+
+    let ExtendedButton = BaseCount(Label)
 
     ReactDOM.render(<ExtendedButton />, document.getElementById('app'));
 </script>
