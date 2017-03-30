@@ -34,8 +34,16 @@
             )
         },
 
-        updateLikes: function(target) {
-            console.log(target)
+        componentWillReceiveProps: function(props) {
+            console.log("RECEIVING PROPS")
+            console.log(props)
+
+            this.setState({
+                popular:  props.likes >=  5
+            })
+        },
+
+        updateLikes: function() {
             ReactDOM.render(
                     <LikesComponent likes={this.props.likes + 1} />, document.getElementById('app')
             )
