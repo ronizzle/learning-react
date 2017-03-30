@@ -34,12 +34,12 @@
             )
         },
 
-        componentWillReceiveProps: function(props) {
+        componentWillReceiveProps: function(next_props) {
             console.log("RECEIVING PROPS")
-            console.log(props)
+            console.log(next_props)
 
             this.setState({
-                popular:  props.likes >=  5
+                popular:  next_props.likes >=  5
             })
         },
 
@@ -47,6 +47,14 @@
             ReactDOM.render(
                     <LikesComponent likes={this.props.likes + 1} />, document.getElementById('app')
             )
+        },
+
+        shouldComponentUpdate: function(next_props, next_state) {
+            console.log("SHOULD UPDATE?")
+            console.log(next_props)
+            console.log(next_state)
+            return next_props.likes % 2 === 0;
+
         }
     })
 
